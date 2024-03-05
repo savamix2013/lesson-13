@@ -1,0 +1,36 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <h1>Вітаємо вас в магазині крафтового одягу!</h1>
+    <p>Оберіть категорію:</p>
+    <ul>
+        <li><a href="/catalog/jackets">Куртки</a></li>
+        <li><a href="/catalog/pants">Брюки</a></li>
+        <li><a href="/catalog/t-shirts">Футболки</a></li>
+    </ul>
+
+    <!-- Виведемо кількість елементів у корзині -->
+    <% if (shoppingCart.length> 0) { %>
+        <p>Елементів у корзині: <%= shoppingCart.length %>
+        </p>
+        <% } else { %>
+            <p>Корзина порожня.</p>
+            <% } %>
+
+                <!-- Посилання на корзину -->
+                <a href="/cart">Переглянути корзину</a>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!-- views/catalog.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <h2>
+        <%= title %>
+    </h2>
+
+    <!-- Зображення для кожної категорії -->
+    <% if (title==='jackets' ) { %>
+        <img src="https://7-km.od.ua/image/cache/webp/catalog/photo/zel120923/25-800x800.webp" alt="Куртки">
+        <% } else if (title==='pants' ) { %>
+            <img src="https://pierrecardin.com.ua/upload/resize_cache/webp/iblock/5c4/2c0ggjom1c4zksk5vtlg8o361t7dfgwf.webp" alt="Брюки">
+            <% } else if (title==='t-shirts' ) { %>
+                <img src="https://opium.in.ua/sites/default/files/styles/845x/public/2023-02/druk-na-futbolkakh-druk-na-polo.gif?itok=TMo2UA3B" alt="Футболки">
+                <% } %>
+
+                    <!-- Форма для додавання товару в корзину -->
+                    <form action="/add-to-cart" method="post">
+                        <input type="hidden" name="item" value="<%= title %>">
+                        <button type="submit">Додати до корзини</button>
+                    </form>
+
+                    <a href="/">Повернутися назад</a>
+</body>
+
+</html>
